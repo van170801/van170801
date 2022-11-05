@@ -69,7 +69,7 @@ app.post('/van170801/login', urlencodedParser, (req, res) => {
         if(result.password == req.body.password && result.username == req.body.username){
             alert('Đăng nhập thành công')
             console.log('dang nhap thanh cong')
-            res.redirect('/van170801/TrangChu')
+            res.redirect('/TrangChu')
         }
     })
     .catch(err=> {
