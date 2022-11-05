@@ -68,13 +68,13 @@ app.post('/van170801/login', urlencodedParser, (req, res) => {
     .then(result=>{
         if(result.password == req.body.password && result.username == req.body.username){
             alert('Đăng nhập thành công')
-            console.log('dang nhap thanh cong')
-            res.redirect('/TrangChu')
+            //console.log('dang nhap thanh cong')
+            res.redirect('/van170801/trangchu')
         }
     })
     .catch(err=> {
         alert('Tài khoản không đúng')
-        console.log('dang nhap that bai')
+        //console.log('dang nhap that bai')
     })
 });
 
