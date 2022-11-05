@@ -14,24 +14,24 @@ mongoose.connect('mongodb://localhost/KS-Nodemy', {
 // mongoose database
 var user = require('./models/user.model')
 
-app.get('/register', (req, res, next)=>{
+app.get('/van170801/register', (req, res, next)=>{
     res.sendFile(path.join(__dirname, 'register.html'))
 });
 
-app.get('/login', (req, res, next) => {
+app.get('/van170801/login', (req, res, next) => {
     res.sendFile(path.join(__dirname, 'login.html'))
 });
 
-app.get('/trangchu', (req, res, next)=>{
+app.get('/van170801/trangchu', (req, res, next)=>{
     res.sendFile(path.join(__dirname, 'trangchu.html'))
 });
 
-app.get('/', (req, res, next)=>{
+app.get('/van170801/', (req, res, next)=>{
     res.sendFile(path.join(__dirname, 'home.html'))
 });
 
 
-app.post('/register', urlencodedParser, async (req, res)=>{
+app.post('/van170801/register', urlencodedParser, async (req, res)=>{
     try{
         var username = req.body.username
         const use =  await user.findOne({
@@ -56,7 +56,7 @@ app.post('/register', urlencodedParser, async (req, res)=>{
     
 });
 
-app.post('/login', urlencodedParser, (req, res) => {
+app.post('/van170801/login', urlencodedParser, (req, res) => {
     
     var username = req.body.username
     var password = req.body.password
@@ -69,7 +69,7 @@ app.post('/login', urlencodedParser, (req, res) => {
         if(result.password == req.body.password && result.username == req.body.username){
             alert('Đăng nhập thành công')
             console.log('dang nhap thanh cong')
-            res.redirect('/TrangChu')
+            res.redirect('/van170801/TrangChu')
         }
     })
     .catch(err=> {
